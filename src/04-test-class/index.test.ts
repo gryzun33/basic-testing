@@ -13,8 +13,8 @@ jest.mock('lodash', () => ({
 
 describe('BankAccount', () => {
   test('should create account with initial balance', () => {
-    const account = new BankAccount(1000);
-    expect(account).toEqual(getBankAccount(1000));
+    const account = getBankAccount(1000);
+    expect(account.getBalance()).toBe(1000);
   });
 
   test('should throw InsufficientFundsError error when withdrawing more than balance', () => {
